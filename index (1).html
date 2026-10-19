@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amit Bagde | Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Amit Bagde, Computer Engineering student and full-stack developer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#000;
+  --gold:#d4af37;
+  --gold-light:#f3dc8a;
+  --gold-deep:#a8841f;
+  --silver:#c9ccd3;
+  --silver-dim:#8a8d96;
+  --glass:rgba(255,255,255,.035);
+  --line:rgba(212,175,55,.28);
+  --gold-grad:linear-gradient(135deg,#a8841f 0%,#f3dc8a 40%,#d4af37 60%,#8f6f17 100%);
+  --silver-grad:linear-gradient(135deg,#8a8d96 0%,#f2f3f6 45%,#b5b8c0 70%,#7c7f88 100%);
+  --script:"Great Vibes","Snell Roundhand","Apple Chancery",cursive;
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  font-weight:300;
+  color:var(--silver);
+  background:var(--bg);
+  min-height:100vh;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+/* faint gold glow at the top only, rest stays pure AMOLED black */
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(700px 380px at 50% -80px,rgba(212,175,55,.16),transparent 70%);
+}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{position:relative;z-index:1;max-width:980px;margin:0 auto;padding:0 24px}
+
+/* nav */
+nav{position:sticky;top:14px;z-index:10;max-width:980px;margin:14px auto 0;padding:0 24px}
+.nav-in{display:flex;justify-content:space-between;align-items:center;padding:10px 24px;border-radius:999px;background:rgba(0,0,0,.6);border:1px solid var(--line);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+.logo{font-family:var(--script);font-size:30px;line-height:1;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-in ul{display:flex;gap:26px;list-style:none;font-size:14px;letter-spacing:.02em;color:var(--silver-dim)}
+.nav-in ul a:hover{color:var(--gold-light)}
+
+/* hero */
+.hero{padding:120px 0 90px;text-align:center}
+.hero h1{font-family:var(--script);font-weight:400;font-size:clamp(78px,16vw,170px);line-height:1;padding:0 .1em .12em;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rule{width:120px;height:1px;margin:22px auto;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.role{font-size:clamp(18px,2.6vw,24px);font-weight:300;letter-spacing:.04em;background:var(--silver-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{max-width:560px;margin:18px auto 0;font-size:17px;color:var(--silver-dim)}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+.btn{padding:12px 28px;border-radius:999px;font-size:15px;font-weight:400;letter-spacing:.02em;border:1px solid var(--line);color:var(--silver);background:var(--glass);transition:border-color .2s,color .2s}
+.btn:hover{border-color:var(--gold);color:var(--gold-light)}
+.btn.primary{background:var(--gold-grad);color:#000;border-color:transparent;font-weight:500}
+.btn.primary:hover{color:#000;filter:brightness(1.1)}
+
+/* sections */
+section{padding:56px 0}
+h2{font-family:var(--script);font-weight:400;font-size:clamp(44px,7vw,64px);line-height:1.1;margin-bottom:26px;padding-bottom:.08em;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;display:inline-block}
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.glass{
+  position:relative;
+  background:var(--glass);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:30px;
+  backdrop-filter:blur(26px) saturate(140%);
+  -webkit-backdrop-filter:blur(26px) saturate(140%);
+  box-shadow:inset 0 1px 0 rgba(243,220,138,.12),0 20px 50px rgba(0,0,0,.6);
+}
+.glass h3{font-size:20px;font-weight:500;letter-spacing:-.01em;margin-bottom:6px;background:var(--silver-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glass p,.glass li{color:var(--silver-dim);font-size:15px}
+.glass ul{padding-left:18px;margin-top:10px}
+.glass li+li{margin-top:6px}
+.meta{font-size:13px;letter-spacing:.04em;color:var(--gold);margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{padding:5px 14px;border-radius:999px;font-size:13px;color:var(--silver);border:1px solid rgba(201,204,211,.22);background:rgba(255,255,255,.03)}
+.contact{text-align:center;padding:56px 28px}
+.contact h2{display:block}
+.contact p{margin-bottom:26px;font-size:17px}
+footer{position:relative;z-index:1;text-align:center;color:var(--silver-dim);font-size:13px;padding:40px 0 56px}
+footer span{font-family:var(--script);font-size:26px;color:var(--gold)}
+
+@media(max-width:760px){
+  .g2,.g3{grid-template-columns:1fr}
+  .nav-in ul{display:none}
+  .hero{padding:84px 0 56px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav><div class="nav-in">
+  <span class="logo">Amit</span>
+  <ul>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div></nav>
+
+<main class="wrap">
+
+  <header class="hero">
+    <h1>Amit Bagde</h1>
+    <div class="rule"></div>
+    <div class="role">Full-Stack Developer</div>
+    <p>Final-year Computer Engineering student who builds responsive web apps and data-driven tools.</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">See my projects</a>
+      <a class="btn" href="mailto:amit.bagde1312@gmail.com">Email me</a>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid g2">
+      <article class="glass">
+        <div class="meta">NASA Space Apps Challenge</div>
+        <h3>EnviroDash</h3>
+        <p>An Earth intelligence dashboard that visualizes environmental and forest fire data. A Python pipeline pulls NASA FIRMS and OpenAQ data and cleans it automatically into MongoDB, and a Node.js full-stack dashboard displays it.</p>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+      </article>
+      <article class="glass">
+        <div class="meta">2025</div>
+        <h3>Eka Swasthya</h3>
+        <p>One Nation, One Health Record. A secure PWA concept that gives citizens a digital Health Locker for prescriptions and lab results, with a unified Health ID and patient-controlled data sharing.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">PWA</span></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="grid">
+      <article class="glass">
+        <div class="meta">Jan 2026</div>
+        <h3>Full-Stack Web Development Intern, Axcentra</h3>
+        <ul>
+          <li>Completed a 4-week vocational internship on full-stack web application development.</li>
+          <li>Built frontend interfaces and configured standalone backend routes with React, Node.js, Express and MongoDB.</li>
+        </ul>
+      </article>
+      <article class="glass">
+        <div class="meta">2025</div>
+        <h3>Smart India Hackathon, Team CodeStorm</h3>
+        <p>Reached the PPT presentation round and pitched our proposed technical solution to the evaluation panel.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="grid g3">
+      <div class="glass"><h3>Languages</h3>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">SQL</span><span class="tag">HTML/CSS</span></div></div>
+      <div class="glass"><h3>Frameworks</h3>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Tailwind CSS</span><span class="tag">MongoDB</span><span class="tag">Mongoose</span></div></div>
+      <div class="glass"><h3>Tools</h3>
+        <div class="tags"><span class="tag">Git/GitHub</span><span class="tag">Vercel</span><span class="tag">Postman</span><span class="tag">REST APIs</span><span class="tag">Agile</span></div></div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="glass">
+      <h3>B.E. in Computer Engineering</h3>
+      <p>Sandip Institute of Engineering and Management, Nashik. Expected 2027. GATE qualified.</p>
+      <div class="tags"><span class="tag">Quantum Computing (NPTEL)</span><span class="tag">Java &amp; Web Development (Apna College)</span></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="glass contact">
+      <h2>Let's work together</h2>
+      <p>I'm looking for internships and entry-level developer roles.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:amit.bagde1312@gmail.com">amit.bagde1312@gmail.com</a>
+        <a class="btn" href="https://github.com/amit1111-byte" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn" href="https://linkedin.com/in/amitbagde/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer><span>Amit Bagde</span><br>&copy; 2026</footer>
+
+</body>
+</html>
